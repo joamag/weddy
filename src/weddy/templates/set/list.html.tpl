@@ -13,7 +13,7 @@
                     <a href="#">{{ set.title._content }}</a>
                 </div>
                 <div class="description">
-                    <span>{{ set.description._content }}</span>
+                    <span>{{ set.description._content|safe }}</span>
                 </div>
             </li>
         {% endfor %}
