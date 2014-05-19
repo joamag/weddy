@@ -7,9 +7,14 @@
         Enable your projects below by flicking the switch.
     </div>
     <ul class="repos">
-        {% for set in sets %}
+        {% for set in sets.photosets.photoset %}
             <li>
-                <a href="#">{{ set }}</a>
+                <div class="name">
+                    <a href="#">{{ set.title._content }}</a>
+                </div>
+                <div class="description">
+                    <span>{{ set.description._content }}</span>
+                </div>
             </li>
         {% endfor %}
     </ul>
