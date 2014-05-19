@@ -28,6 +28,12 @@ class Instance(appier_extras.admin.Account):
         account = super(Instance, cls).login(username, password)
         return account
 
+    @classmethod
+    def from_session(cls, *args, **kwargs):
+        session = appier.get_session()
+        username = session["username"]
+        return cls.get(username = username, *args, **kwargs)
+
     def get_api(self, redirect_url = None):
         instance = self.reload(rules = False)
         return flickr.Api(

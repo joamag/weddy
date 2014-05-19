@@ -21,8 +21,7 @@ class BaseController(abstract.AbstractController):
         oauth_verifier = self.field("oauth_verifier")
         api = self.get_api()
         oauth_token, oauth_token_secret = api.oauth_access(oauth_verifier)
-        username = self.session["username"]
-        instance = weddy.Instance.get(username = username, rules = False)
+        instance = weddy.Instance.from_session(rules = False)
         instance.oauth_token = oauth_token
         instance.oauth_token_secret = oauth_token_secret
         instance.save()
