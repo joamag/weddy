@@ -28,11 +28,12 @@ class Instance(appier_extras.admin.Account):
         account = super(Instance, cls).login(username, password)
         return account
 
-    def get_api(self):
+    def get_api(self, redirect_url = None):
         instance = self.reload(rules = False)
         return flickr.Api(
             client_key = instance.client_key,
             client_secret = instance.client_secret,
             oauth_token = instance.oauth_token,
-            oauth_token_secret = instance.oauth_token_secret
+            oauth_token_secret = instance.oauth_token_secret,
+            redirect_url = redirect_url
         )

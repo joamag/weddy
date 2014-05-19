@@ -3,11 +3,18 @@
 
 import appier
 
-class SetController(appier.Controller):
+from . import abstract
+
+class SetController(abstract.AbstractController):
 
     @appier.route("/sets", "GET")
     @appier.private
     def list(self):
+        url = self.ensure_api()
+        if url: return self.redirect(url)
+        api = self.get_api()
+        sets = api.list_sets()
         return self.template(
-            "index.html.tpl"
+            "set/list.html.tpl",
+            sets = sets
         )
