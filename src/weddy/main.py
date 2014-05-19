@@ -11,7 +11,7 @@ class WeddyApp(appier.WebApp):
     def __init__(self):
         appier.WebApp.__init__(
             self,
-            name = "shopdesk",
+            name = "weddy",
             parts = (
                 appier_extras.AdminPart(
                     account_c = models.Instance
