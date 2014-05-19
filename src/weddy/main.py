@@ -4,6 +4,8 @@
 import appier
 import appier_extras
 
+from weddy import models
+
 class WeddyApp(appier.WebApp):
 
     def __init__(self):
@@ -11,7 +13,9 @@ class WeddyApp(appier.WebApp):
             self,
             name = "shopdesk",
             parts = (
-                appier_extras.AdminPart,
+                appier_extras.AdminPart(
+                    account_c = models.Instance
+                ),
             )
         )
 
