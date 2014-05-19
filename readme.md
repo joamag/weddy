@@ -1,3 +1,3 @@
-# Weddy, wedding infra-structure
+# Weddy
 
 Wedding image management system.
