@@ -4,5 +4,9 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/layout.css') }}" />
 {% endblock %}
 {% block links %}
-    <a class="selected" href="#">sets</a>
+    <a href="#">home</a>
+    //
+    <a class="active" href="#">sets</a>
+    //
+    <a href="#">about</a>
 {% endblock %}
