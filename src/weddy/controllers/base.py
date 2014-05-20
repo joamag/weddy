@@ -17,6 +17,7 @@ class BaseController(abstract.AbstractController):
         )
 
     @appier.route("/oauth", "GET")
+    @appier.private
     def oauth(self):
         oauth_verifier = self.field("oauth_verifier")
         api = self.get_api()
@@ -28,6 +29,7 @@ class BaseController(abstract.AbstractController):
         )
 
     @appier.route("/oauth/invalidate", "GET")
+    @appier.private
     def oauth_invalidate(self):
         instance = weddy.Instance.from_session(rules = False)
         instance.invalidate_s()
