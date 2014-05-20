@@ -1,3 +1,4 @@
+{% set style = "full" %}
 {% extends "base.html.tpl" %}
 {% block title %}Sets{% endblock %}
 {% block name %}Sets :: {{ photos.title }}{% endblock %}

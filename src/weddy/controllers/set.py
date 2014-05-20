@@ -30,6 +30,5 @@ class SetController(abstract.AbstractController):
         return self.template(
             "set/show.html.tpl",
             area = "sets",
-            style = "full",
             photos = photos
         )
