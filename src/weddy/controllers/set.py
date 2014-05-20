@@ -16,5 +16,6 @@ class SetController(abstract.AbstractController):
         sets = api.list_sets()
         return self.template(
             "set/list.html.tpl",
+            area = "sets",
             sets = sets
         )
