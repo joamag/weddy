@@ -5,10 +5,11 @@
 }
 
 .window.window-lightbox {
-    border-color: #555555;
+    border-color: #4d4d4d;
     box-shadow: 0px 0px 6px #666666;
     -moz-box-shadow: 0px 0px 6px #666666;
     -webkit-box-shadow: 0px 0px 6px #666666;
+    cursor: pointer;
     line-height: 0px;
     padding: 0px 0px 0px 0px;
 }
@@ -22,4 +23,5 @@
     box-shadow: 0px 1px 6px #f2f2f2;
     -moz-box-shadow: 0px 1px 6px #f2f2f2;
     -webkit-box-shadow: 0px 1px 6px #f2f2f2;
+    cursor: pointer;
 }
