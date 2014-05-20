@@ -22,7 +22,7 @@
 .photos .photo {
     border: 1px solid #888888;
     cursor: pointer;
+    height: 280px;
     margin: 12px 6px 12px 6px;
     vertical-align: middle;
-	height: 180px;
 }
