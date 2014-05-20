@@ -6,7 +6,7 @@
 {% block links %}
     {{ menu_link("home") }}
     //
-    {{ menu_link("sets") }}
+    {{ menu_link("sets", url_for("set.list")) }}
     //
     {{ menu_link("about") }}
 {% endblock %}

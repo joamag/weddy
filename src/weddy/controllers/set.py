@@ -19,3 +19,16 @@ class SetController(abstract.AbstractController):
             area = "sets",
             sets = sets
         )
+
+    @appier.route("/sets/<str:id>/photos", "GET")
+    @appier.private
+    def photos(self, id):
+        url = self.ensure_api()
+        if url: return self.redirect(url)
+        api = self.get_api()
+        photos = api.photos_set(id)
+        return self.template(
+            "set/show.html.tpl",
+            area = "sets",
+            photos = photos
+        )
