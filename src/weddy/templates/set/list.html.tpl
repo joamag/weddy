@@ -1,5 +1,5 @@
 {% extends "base.html.tpl" %}
-{% block title %}sets{% endblock %}
+{% block title %}Sets{% endblock %}
 {% block name %}Sets{% endblock %}
 {% block content %}
     <ul class="sets">

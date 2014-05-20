@@ -1,5 +1,5 @@
 {% extends "base.html.tpl" %}
-{% block title %}home{% endblock %}
+{% block title %}Home{% endblock %}
 {% block name %}{{ own.description }}{% endblock %}
 {% block content %}
     <div class="quote">
