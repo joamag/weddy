@@ -20,19 +20,21 @@ class BaseController(abstract.AbstractController):
     @appier.private
     def oauth(self):
         oauth_verifier = self.field("oauth_verifier")
+        next = self.field("state")
         api = self.get_api()
         oauth_token, oauth_token_secret = api.oauth_access(oauth_verifier)
         instance = weddy.Instance.from_session()
         instance.tokens_s(oauth_token, oauth_token_secret, temporary = False)
         self.redirect(
-            self.url_for("base.index")
+            next or self.url_for("base.index")
         )
 
     @appier.route("/oauth/invalidate", "GET")
     @appier.private
     def oauth_invalidate(self):
+        next = self.field("next")
         instance = weddy.Instance.from_session(rules = False)
         instance.invalidate_s()
         self.redirect(
-            self.url_for("base.index")
+            next or self.url_for("base.index")
         )
