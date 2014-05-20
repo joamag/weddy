@@ -11,6 +11,7 @@ class AbstractController(appier.Controller):
         instance = weddy.Instance.from_session(rules = False)
         if not instance.oauth_temporary and instance.oauth_token and\
             instance.oauth_token_secret: return
+        instance.invalidate_s()
         api = self.get_api()
         url = api.oauth_authorize()
         instance.tokens_s(
