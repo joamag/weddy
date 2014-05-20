@@ -27,6 +27,15 @@ class WeddyApp(appier.WebApp):
             self.url_for(self.request.location)
         )
 
+    def get_pager(self, base, id):
+        def pager(page):
+            return self.url_for(
+                base,
+                id = id,
+                page = page
+            )
+        return pager
+
 if __name__ == "__main__":
     app = WeddyApp()
     app.serve()

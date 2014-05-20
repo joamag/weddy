@@ -10,4 +10,7 @@
                  data-lightbox_path="http://farm{{ photo.farm }}.staticflickr.com/{{ photo.server }}/{{ photo.id }}_{{ photo.secret }}_b.jpg" />
         {% endfor %}
     </div>
+    {% if photos.pages > 1 %}
+        {{ paging(photos.page|int, photos.pages, caller = pager) }}
+    {% endif %}
 {% endblock %}
