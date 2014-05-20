@@ -47,11 +47,7 @@ class Instance(appier_extras.admin.Account):
         instance.save()
 
     def invalidate_s(self):
-        instance = self.reload(rules = False)
-        instance.oauth_token = None
-        instance.oauth_token_secret = None
-        instance.oauth_temporary = True
-        instance.save()
+        self.tokens_s(None, None, temporary = True)
 
     def get_api(self, redirect_url = None):
         instance = self.reload(rules = False)
