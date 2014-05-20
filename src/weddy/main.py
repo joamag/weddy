@@ -19,6 +19,14 @@ class WeddyApp(appier.WebApp):
             )
         )
 
+    @appier.exception_handler(appier.OAuthAccessError)
+    def oauth_error(self, error):
+        instance = models.Instance.from_session(rules = False)
+        instance.invalidate_s()
+        return self.redirect(
+            self.url_for("base.index")
+        )
+
 if __name__ == "__main__":
     app = WeddyApp()
     app.serve()
