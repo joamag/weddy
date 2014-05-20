@@ -13,7 +13,7 @@ class AbstractController(appier.Controller):
             instance.oauth_token_secret: return
         instance.invalidate_s()
         api = self.get_api()
-        url = api.oauth_authorize()
+        url = api.oauth_authorize(state = self.request.location)
         instance.tokens_s(
             api.oauth_token,
             api.oauth_token_secret,
