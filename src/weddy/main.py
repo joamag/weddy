@@ -27,12 +27,12 @@ class WeddyApp(appier.WebApp):
             self.url_for(self.request.location)
         )
 
-    def get_pager(self, base, id):
+    def get_pager(self, base, **kwargs):
         def pager(page):
             return self.url_for(
                 base,
-                id = id,
-                page = page
+                page = page,
+                **kwargs
             )
         return pager
 

@@ -32,5 +32,5 @@ class SetController(abstract.AbstractController):
             "set/show.html.tpl",
             area = "sets",
             photos = photos,
-            pager = self.get_pager("set.photos", id)
+            pager = self.get_pager("set.photos", id = id)
         )
