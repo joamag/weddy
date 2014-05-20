@@ -13,7 +13,15 @@ class BaseController(abstract.AbstractController):
     @appier.route("/index", "GET")
     def index(self):
         return self.template(
-            "index.html.tpl"
+            "index.html.tpl",
+            area = "home"
+        )
+
+    @appier.route("/about", "GET")
+    def about(self):
+        return self.template(
+            "about.html.tpl",
+            area = "about"
         )
 
     @appier.route("/oauth", "GET")

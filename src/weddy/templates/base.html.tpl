@@ -4,9 +4,9 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/layout.css') }}" />
 {% endblock %}
 {% block links %}
-    {{ menu_link("home") }}
+    {{ menu_link("home", url_for("base.index")) }}
     //
     {{ menu_link("sets", url_for("set.list")) }}
     //
-    {{ menu_link("about") }}
+    {{ menu_link("about", url_for("base.about")) }}
 {% endblock %}
