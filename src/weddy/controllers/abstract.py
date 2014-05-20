@@ -12,9 +12,8 @@ class AbstractController(appier.Controller):
         if instance.oauth_token and instance.oauth_token_secret: return
         api = self.get_api()
         url = api.oauth_authorize()
-        instance.oauth_token = api.oauth_token
-        instance.oauth_token_secret = api.oauth_token_secret
-        instance.save()
+        instance = weddy.Instance.from_session()
+        instance.tokens_s(api.oauth_token, api.oauth_token_secret)
         return url
 
     def get_api(self, redirect_url = None):

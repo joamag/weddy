@@ -34,6 +34,12 @@ class Instance(appier_extras.admin.Account):
         username = session["username"]
         return cls.get(username = username, *args, **kwargs)
 
+    def tokens_s(self, oauth_token, oauth_token_secret):
+        instance = self.reload(rules = False)
+        instance.oauth_token = oauth_token
+        instance.oauth_token_secret = oauth_token_secret
+        instance.save()
+
     def invalidate_s(self):
         instance = self.reload(rules = False)
         instance.oauth_token = None
