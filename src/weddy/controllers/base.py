@@ -23,7 +23,7 @@ class BaseController(abstract.AbstractController):
         api = self.get_api()
         oauth_token, oauth_token_secret = api.oauth_access(oauth_verifier)
         instance = weddy.Instance.from_session()
-        instance.tokens_s(oauth_token, oauth_token_secret)
+        instance.tokens_s(oauth_token, oauth_token_secret, temporary = False)
         self.redirect(
             self.url_for("base.index")
         )

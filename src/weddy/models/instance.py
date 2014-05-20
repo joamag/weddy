@@ -23,6 +23,11 @@ class Instance(appier_extras.admin.Account):
         private = True
     )
 
+    oauth_temporary = appier.field(
+        type = bool,
+        private = True
+    )
+
     @classmethod
     def login(cls, username, password):
         account = super(Instance, cls).login(username, password)
@@ -34,16 +39,18 @@ class Instance(appier_extras.admin.Account):
         username = session["username"]
         return cls.get(username = username, *args, **kwargs)
 
-    def tokens_s(self, oauth_token, oauth_token_secret):
+    def tokens_s(self, oauth_token, oauth_token_secret, temporary = True):
         instance = self.reload(rules = False)
         instance.oauth_token = oauth_token
         instance.oauth_token_secret = oauth_token_secret
+        instance.oauth_temporary = temporary
         instance.save()
 
     def invalidate_s(self):
         instance = self.reload(rules = False)
         instance.oauth_token = None
         instance.oauth_token_secret = None
+        instance.oauth_temporary = True
         instance.save()
 
     def get_api(self, redirect_url = None):
