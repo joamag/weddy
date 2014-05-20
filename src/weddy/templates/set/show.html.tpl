@@ -5,7 +5,9 @@
 {% block content %}
     <div class="photos">
         {% for photo in photos.photo %}
-            <img src="http://farm{{ photo.farm }}.staticflickr.com/{{ photo.server }}/{{ photo.id }}_{{ photo.secret }}_m.jpg" />
+            <img class="image photo"
+                 src="http://farm{{ photo.farm }}.staticflickr.com/{{ photo.server }}/{{ photo.id }}_{{ photo.secret }}_m.jpg"
+                 data-lightbox_path="http://farm{{ photo.farm }}.staticflickr.com/{{ photo.server }}/{{ photo.id }}_{{ photo.secret }}_b.jpg" />
         {% endfor %}
     </div>
 {% endblock %}

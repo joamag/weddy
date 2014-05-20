@@ -1,5 +1,25 @@
 @charset "utf-8";
 
+#overlay {
+    background-color: #4d4d4d;
+}
+
+.window.window-lightbox {
+    border-color: #555555;
+    box-shadow: 0px 0px 6px #666666;
+    -moz-box-shadow: 0px 0px 6px #666666;
+    -webkit-box-shadow: 0px 0px 6px #666666;
+    line-height: 0px;
+    padding: 0px 0px 0px 0px;
+}
+
 .photos {
     margin: 24px 0px 24px 0px;
+}
+
+.photos .photo {
+    border: 1px solid #d7e0dd;
+    box-shadow: 0px 1px 6px #f2f2f2;
+    -moz-box-shadow: 0px 1px 6px #f2f2f2;
+    -webkit-box-shadow: 0px 1px 6px #f2f2f2;
 }
