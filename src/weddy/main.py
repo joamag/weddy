@@ -24,7 +24,7 @@ class WeddyApp(appier.WebApp):
         instance = models.Instance.from_session(rules = False)
         instance.invalidate_s()
         return self.redirect(
-            self.url_for("base.index")
+            self.url_for(self.request.location)
         )
 
 if __name__ == "__main__":
