@@ -6,7 +6,7 @@
     <div class="photos">
         {% for photo in photos.photo %}
             <img class="image photo" alt="{{ photo.title }}" title="{{ photo.title }}"
-                 src="http://farm{{ photo.farm }}.staticflickr.com/{{ photo.server }}/{{ photo.id }}_{{ photo.secret }}_m.jpg"
+                 src="http://farm{{ photo.farm }}.staticflickr.com/{{ photo.server }}/{{ photo.id }}_{{ photo.secret }}_z.jpg"
                  data-lightbox_path="http://farm{{ photo.farm }}.staticflickr.com/{{ photo.server }}/{{ photo.id }}_{{ photo.secret }}_b.jpg" />
         {% endfor %}
     </div>

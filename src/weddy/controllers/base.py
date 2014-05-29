@@ -11,6 +11,7 @@ class BaseController(abstract.AbstractController):
 
     @appier.route("/", "GET")
     @appier.route("/index", "GET")
+    @appier.private
     def index(self):
         return self.template(
             "index.html.tpl",
@@ -18,6 +19,7 @@ class BaseController(abstract.AbstractController):
         )
 
     @appier.route("/about", "GET")
+    @appier.private
     def about(self):
         return self.template(
             "about.html.tpl",
