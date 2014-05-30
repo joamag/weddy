@@ -26,9 +26,15 @@
 }
 
 .photos .photo {
-    border: 1px solid #888888;
     cursor: pointer;
     height: 280px;
     margin: 12px 6px 12px 6px;
+    transition: opacity 0.25s ease-in-out;
+    -moz-transition: opacity 0.25s ease-in-out;
+    -webkit-transition: opacity 0.25s ease-in-out;
     vertical-align: middle;
+}
+
+.photos .photo:hover {
+    opacity: 0.85;
 }
