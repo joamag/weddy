@@ -8,7 +8,7 @@ from weddy import models
 
 class WeddyApp(appier.WebApp):
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         appier.WebApp.__init__(
             self,
             name = "weddy",
@@ -16,7 +16,8 @@ class WeddyApp(appier.WebApp):
                 appier_extras.AdminPart(
                     account_c = models.Instance
                 ),
-            )
+            ),
+            *args, **kwargs
         )
 
     @appier.exception_handler(appier.OAuthAccessError)
