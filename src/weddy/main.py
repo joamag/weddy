@@ -40,3 +40,5 @@ class WeddyApp(appier.WebApp):
 if __name__ == "__main__":
     app = WeddyApp()
     app.serve()
+else:
+    __path__ = []
