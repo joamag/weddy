@@ -51,7 +51,7 @@ class Instance(appier_extras.admin.Account):
 
     def get_api(self, redirect_url = None):
         instance = self.reload(rules = False)
-        return flickr.Api(
+        return flickr.API(
             client_key = instance.client_key,
             client_secret = instance.client_secret,
             oauth_token = instance.oauth_token,
