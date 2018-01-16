@@ -3,12 +3,20 @@
 #overlay {
     background-color: #000000;
     opacity: 0.75;
+    -o-opacity: 0.75;
+    -ms-opacity: 0.75;
+    -moz-opacity: 0.75;
+    -khtml-opacity: 0.75;
+    -webkit-opacity: 0.75;
 }
 
 .window.window-lightbox {
     border-color: #dddddd;
     box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
     -moz-box-shadow: none;
+    -khtml-box-shadow: none;
     -webkit-box-shadow: none;
     cursor: pointer;
     line-height: 0px;
@@ -30,11 +38,19 @@
     height: 280px;
     margin: 12px 6px 12px 6px;
     transition: opacity 0.25s ease-in-out;
+    -o-transition: opacity 0.25s ease-in-out;
+    -ms-transition: opacity 0.25s ease-in-out;
     -moz-transition: opacity 0.25s ease-in-out;
+    -khtml-transition: opacity 0.25s ease-in-out;
     -webkit-transition: opacity 0.25s ease-in-out;
     vertical-align: middle;
 }
 
 .photos .photo:hover {
     opacity: 0.85;
+    -o-opacity: 0.85;
+    -ms-opacity: 0.85;
+    -moz-opacity: 0.85;
+    -khtml-opacity: 0.85;
+    -webkit-opacity: 0.85;
 }
